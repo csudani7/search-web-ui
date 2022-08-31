@@ -1,12 +1,12 @@
 /* this is config file for our application */
 
 module.exports = {
-    mysql : {
-        host: 'localhost',
-        post: '3306',
-        user : 'crystalt_test_cs',
-        password: 'Chintan@123',
-        database : 'crystalt_test_cs',
-        connectionLimit: 100
-    }
-}
+  mysql: {
+    host: "localhost",
+    post: "3306",
+    user: "root",
+    password: "",
+    database: "search_user_db",
+    connectionLimit: 100,
+  },
+};

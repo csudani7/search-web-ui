@@ -3,12 +3,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const http = require("http");
 const cors = require("cors");
-const {
-  handle404Error,
-  handleDevErrors,
-} = require("./app/middlewares/errorHandlers");
 const { getConnection } = require("./app/middlewares/mysql");
-
 const index = require("./app/routes/index");
 const app = express();
 
@@ -44,14 +39,6 @@ app.use("/getErrorsList", async (req, res) => {
   res.json(haha);
 });
 
-// catch 404 and forward to error handler
-app.use(handle404Error);
-
-// error handler
-app.use(handleDevErrors);
-
-/* will be assinging env port if it's available  else port will be 3000 */
-// const port = process.env.PORT || 5000;
 const port = 5000;
 
 /* running application server on port 3000 */

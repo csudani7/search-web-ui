@@ -1,14 +1,12 @@
 /* this file helps to connect mysql database */
 
-const mysql = require('mysql');
-const responseHandler = require('../utils/responseHandler');
-const config = require('../utils/config');
+const mysql = require("mysql");
+const responseHandler = require("../utils/responseHandler");
+const config = require("../utils/config");
 var connection = mysql.createConnection(config.mysql);
 connection.connect();
 
-console.log(connection);
 let pool;
-
 
 const passConneciton = (req, res, next) => {
   pool.getConnection((err, connection) => {
@@ -19,13 +17,12 @@ const passConneciton = (req, res, next) => {
       req.mysqlConn = connection;
       next();
       /* release connection when you are done */
-      res.on('finish', () => {
+      res.on("finish", () => {
         connection.release();
       });
     }
   });
 };
-
 
 module.exports = {
   connection,
@@ -43,4 +40,3 @@ module.exports = {
     }
   },
 };
-

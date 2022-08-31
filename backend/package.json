@@ -3,10 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "client": "cd client &&  yarn start",
-    "server": "nodemon app.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "test": "mocha ./app/test"
+    "server": "nodemon app.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
